@@ -7,6 +7,7 @@
 - **interact** Permits use of /tpr and /tphr
 - **tp_tpc** Permits use of /tpc
 - **tp_admin** Admin priv allows admin to teleport anywhere without permission
+- **tp_allow** Priv check to allow interacted players the teleport request priv : added by Brackston 8-19-2017
 
 Players may also teleport to coordinates, however if the area is protected, the teleport will be denied.
 
@@ -55,7 +56,8 @@ Players may also teleport to coordinates, however if the area is protected, the 
 Players with the 'tp_admin' privilege override all the required privileges above, except 'interact'.
 
 ##Contributors:
-- [RobbieF](https://minetest.tv) | [GitHub](https://github.com/Cat5TV)
+- [Brackston] (https://github.com/brackston)
+- [RobbieF](https://minetest.tv) | [GitHub](https:/http://github.com/brackston/github.com/Cat5TV)
 - [DonBatman](https://github.com/donbatman)
 - [NathanS21](http://nathansalapat.com/)
 - [ChaosWormz](https://github.com/ChaosWormz)
