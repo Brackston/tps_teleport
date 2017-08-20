@@ -2,6 +2,7 @@
 -- https://forum.minetest.net/viewtopic.php?id=4457
 -- Updates by Zeno and ChaosWormz
 -- New release by RobbieF under new mod: tps_teleport - http://blog.minetest.tv/teleport-request/
+-- Extra priv (tp_allow) added by Brackston so teleport can be disabled by the admin(s)
 
 local timeout_delay = 60
 
@@ -16,6 +17,10 @@ minetest.register_privilege("tp_admin", {
 })
 minetest.register_privilege("tp_tpc", {
 	description = "Allow player to teleport to coordinates (if permitted by area protection).",
+	give_to_singleplayer=true
+})
+minetest.register_privilege("tp_allow", {
+	description = "Allow player to use tps_teleport.",
 	give_to_singleplayer=true
 })
 
@@ -283,46 +288,46 @@ end
 minetest.register_chatcommand("tpr", {
 	description = "Request teleport to another player",
 	params = "<playername> | leave playername empty to see help message",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tpr_send
 })
 
 minetest.register_chatcommand("tphr", {
 	description = "Request player to teleport to you",
 	params = "<playername> | leave playername empty to see help message",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tphr_send
 })
 
 minetest.register_chatcommand("tpc", {
 	description = "Teleport to coordinates",
 	params = "<coordinates> | leave coordinates empty to see help message",
-	privs = {interact=true,tp_tpc=true},
+	privs = {interact=true,tp_tpc=true,tp_allow=true},
 	func = tpc_send
 })
 
 minetest.register_chatcommand("tpj", {
 	description = "Teleport to relative position",
 	params = "<axis> <distance> | leave empty to see help message",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tpj
 })
 
 minetest.register_chatcommand("tpe", {
 	description = "Evade Enemy",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tpe
 })
 
 minetest.register_chatcommand("tpy", {
 	description = "Accept teleport requests from another player",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tpr_accept
 })
 
 minetest.register_chatcommand("tpn", {
 	description = "Deny teleport requests from another player",
-	privs = {interact=true},
+	privs = {interact=true,tp_allow=true},
 	func = tpr_deny
 })
 
