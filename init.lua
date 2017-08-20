@@ -2,7 +2,7 @@
 -- https://forum.minetest.net/viewtopic.php?id=4457
 -- Updates by Zeno and ChaosWormz
 -- New release by RobbieF under new mod: tps_teleport - http://blog.minetest.tv/teleport-request/
--- Extra priv (tp_allow) added by Brackston so teleport can be disabled by the admin(s)
+-- Extra priv (tp_allow) added by Brackston so teleport can be allowed by priv other than interact
 
 local timeout_delay = 60
 
